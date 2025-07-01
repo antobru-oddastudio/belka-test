@@ -1,0 +1,29 @@
+@let offerData = data();
+@if(offerData) {
+  <belka-test-card>
+    <div>
+      <div>
+        <div class="belka-test-card-header">
+          <div>
+            <img [src]="offerData.logo" />
+          </div>
+          <div class="title">{{offerData.title}}</div>
+        </div>
+      </div>
+      <div>
+        <div></div>
+        <belka-test-alert color="success">
+          @for(item of list; track item.id ) {
+            <div>
+              @if(item.iconUrl) {
+                <img [src]="item.iconUrl" />
+              }
+              <div>{{item.label}}</div>
+            </div>
+          }
+        </belka-test-alert>
+
+      </div>
+    </div>
+  </belka-test-card>
+}
