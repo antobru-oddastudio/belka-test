@@ -4,6 +4,7 @@ import docJson from "../documentation.json";
 setCompodocJson(docJson);
 
 const preview: Preview = {
+
   parameters: {
     controls: {
       matchers: {

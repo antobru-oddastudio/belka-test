@@ -1,56 +1,149 @@
-import type { Meta, StoryObj } from '@storybook/angular';
-import { fn } from 'storybook/test';
+import { Meta, StoryObj, moduleMetadata } from '@storybook/angular';
+import { ButtonComponent } from '../app/components/button/button.component';
+import { ChevronRight } from 'lucide-angular';
 
-import { ButtonComponent } from './button.component';
-
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta: Meta<ButtonComponent> = {
-  title: 'Example/Button',
+  title: 'Components/Button',
   component: ButtonComponent,
   tags: ['autodocs'],
+  decorators: [
+    moduleMetadata({
+      imports: [],
+    }),
+  ],
   argTypes: {
-    backgroundColor: {
-      control: 'color',
-    },
+    id: { control: 'text' },
+    label: { control: 'text' },
+    size: { control: 'select', options: ['xl', 'base'] },
+    expand: { control: 'select', options: ['full', 'base'] },
+    color: { control: 'select', options: ['primary', 'secondary'] },
+    click: { action: 'clicked' },
   },
-  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-  args: { onClick: fn() },
 };
 
 export default meta;
 type Story = StoryObj<ButtonComponent>;
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
+export const Playground: Story = {
+  args: {
+    id: 'btn-primary',
+    label: 'Bottone',
+    size: 'xl',
+    expand: 'full',
+    color: 'primary',
+  },
+  render: (args) => ({
+    component: ButtonComponent,
+    props: args,
+    template: `
+      <belka-test-button
+        [label]="label"
+        [attr.expand]="expand"
+        [attr.size]="size"
+        [attr.color]="color"
+        (click)="click.emit($event)">
+        Bottone
+      </belka-test-button>
+    `,
+  }),
+};
+
 export const Primary: Story = {
   args: {
-    primary: true,
-    label: 'Button',
+    id: 'btn-primary',
+    label: 'Bottone',
+    size: 'xl',
+    expand: 'auto',
+    color: 'primary',
   },
+  render: (args) => ({
+    component: ButtonComponent,
+    props: args,
+    template: `
+      <belka-test-button
+        [label]="label"
+        [attr.expand]="expand"
+        [attr.size]="size"
+        [attr.color]="color"
+        (click)="click.emit($event)">
+        Bottone
+      </belka-test-button>
+    `,
+  }),
 };
 
 export const Secondary: Story = {
   args: {
-    label: 'Button',
+    id: 'btn-primary',
+    label: 'Bottone',
+    size: 'xl',
+    expand: 'auto',
+    color: 'secondary',
   },
+  render: (args) => ({
+    component: ButtonComponent,
+    props: args,
+    template: `
+      <belka-test-button
+        [label]="label"
+        [attr.expand]="expand"
+        [attr.size]="size"
+        [attr.color]="color"
+        (click)="click.emit($event)">
+        Bottone
+      </belka-test-button>
+    `,
+  }),
 };
 
-export const Large: Story = {
+export const WithIcon: Story = {
   args: {
-    size: 'large',
-    label: 'Button',
+    id: 'btn-primary',
+    label: 'Bottone',
+    size: 'xl',
+    expand: 'auto',
+    color: 'primary',
+    iconOptions: {
+      icon: ChevronRight,
+    }
   },
+  render: (args) => ({
+    component: ButtonComponent,
+    props: args,
+    template: `
+      <belka-test-button
+        [label]="label"
+        [attr.expand]="expand"
+        [attr.size]="size"
+        [attr.color]="color"
+        [iconOptions]="iconOptions"
+        (click)="click.emit($event)">
+        Bottone
+      </belka-test-button>
+    `,
+  }),
 };
 
-export const Small: Story = {
+export const FullWidth: Story = {
   args: {
-    size: 'small',
-    label: 'Button',
+    id: 'btn-primary',
+    label: 'Bottone',
+    size: 'xl',
+    expand: 'full',
+    color: 'primary',
   },
-};
-
-export const NewComponent: Story = {
-  args: {
-    primary: false,
-    label: "Button"
-  }
+  render: (args) => ({
+    component: ButtonComponent,
+    props: args,
+    template: `
+      <belka-test-button
+        [label]="label"
+        [attr.expand]="expand"
+        [attr.size]="size"
+        [attr.color]="color"
+        (click)="click.emit($event)">
+        Bottone
+      </belka-test-button>
+    `,
+  }),
 };

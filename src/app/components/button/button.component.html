@@ -1,0 +1,9 @@
+@let iconOpts = iconOptions();
+<button [attr.expand]="expand()" [attr.size]="size()" [attr.color]="color()" (click)="click.emit($event)">
+  <div class="label">
+    <div>{{label()}}</div>
+    @if(iconOpts) {
+      <i-lucide [img]="iconOpts.icon" [size]="iconOpts.size" [color]="iconOpts.color"></i-lucide>
+    }
+  </div>
+</button>

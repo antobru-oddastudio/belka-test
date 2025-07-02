@@ -101,6 +101,12 @@
             "configDir": ".storybook",
             "browserTarget": "belka-test:build",
             "compodoc": true,
+            "assets": [
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.scss"
+            ],
             "compodocArgs": [
               "-e",
               "json",
@@ -116,6 +122,12 @@
             "configDir": ".storybook",
             "browserTarget": "belka-test:build",
             "compodoc": true,
+            "assets": [
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.scss"
+            ],
             "compodocArgs": [
               "-e",
               "json",

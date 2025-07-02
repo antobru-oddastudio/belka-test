@@ -1,3 +1,5 @@
-<div>
-  <ng-content></ng-content>
+<ng-content select="[header]"></ng-content>
+<div class="content">
+  <ng-content select="[body]"></ng-content>
 </div>
+<ng-content select="[footer]"></ng-content>

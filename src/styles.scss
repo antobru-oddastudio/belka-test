@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+@use './theme' as *;
+
+.bold {
+  font-weight: var(--font-bold, 700);
+}
+
+.grid {
+  display: grid;
+}
+
+@for $i from 1 through 12 {
+  .grid-cols-#{$i} {
+    grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
+  }
+}

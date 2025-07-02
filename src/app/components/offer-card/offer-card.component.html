@@ -1,28 +1,120 @@
 @let offerData = data();
 @if(offerData) {
-  <belka-test-card>
-    <div>
-      <div>
-        <div class="belka-test-card-header">
-          <div>
-            <img [src]="offerData.logo" />
-          </div>
-          <div class="title">{{offerData.title}}</div>
-        </div>
-      </div>
-      <div>
-        <div></div>
-        <belka-test-alert color="success">
-          @for(item of list; track item.id ) {
+  <!-- Card principale dell'offerta -->
+  <belka-test-card class="offer-card">
+    <div body class="offer-card-body">
+      <div class="left-side">
+        <!-- Header con logo e titolo -->
+        <div class="belka-test-card-header-wrapper">
+          <div class="belka-test-card-header">
             <div>
-              @if(item.iconUrl) {
-                <img [src]="item.iconUrl" />
+              <img [src]="offerData.logo" alt="Logo offerta" />
+            </div>
+            <div class="title">{{offerData.title}}</div>
+          </div>
+          @let header = offerData.rightHeader.header;
+          @if(header && header.icon) {
+            <div class="mobile-header-icon">
+              @if(typeof header.icon === 'string') {
+                <img src="assets/icons/luce-gas.svg" alt="Icona Luce e Gas" />
+              } @else {
+                <i-lucide [img]="header.icon" size="20" color="var(--color-primary-mid, #146C83)" aria-hidden="true"></i-lucide>
+              }
+            </div>
+          }
+        </div>
+        <div class="divider"></div>
+        <!-- Lista benefit -->
+        <belka-test-alert color="success">
+          @for(item of offerData.benefits; track item.id ) {
+            <div class="benefits-item">
+              @if(item.icon) {
+                <!-- Icona benefit -->
+                <i-lucide [img]="item.icon" size="16" aria-hidden="true"></i-lucide>
               }
               <div>{{item.label}}</div>
             </div>
           }
         </belka-test-alert>
-
+        <!-- Info aggiuntive -->
+        <div class="info-grid grid grid-cols-2">
+          @for(item of offerData.infoList; track item.label) {
+            <div class="bold">{{item.label}}</div>
+            <div>{{item.value}}</div>
+          }
+        </div>
+      </div>
+      <div class="right-side">
+        <!-- Card riepilogo -->
+        <belka-test-card class="overview-card">
+          @if(offerData.rightHeader.header) {
+            <div header>
+              <div>{{offerData.rightHeader.header.title}}</div>
+              @if(offerData.rightHeader.header.icon) {
+                @let icon = offerData.rightHeader.header.icon;
+                <div>
+                  @if(typeof icon === 'string') {
+                    <img src="assets/icons/luce-gas.svg" alt="Icona Luce e Gas" />
+                  } @else {
+                    <i-lucide [img]="icon" size="20" color="var(--color-primary-mid, #146C83)" aria-hidden="true"></i-lucide>
+                  }
+                </div>
+              }
+            </div>
+          }
+          <div body>
+            <div class="info-container">
+              <!-- Totale -->
+              <belka-test-card class="overview-total">
+                <div body>
+                  <div class="label">{{offerData.rightHeader.total.label}}</div>
+                  <div>
+                    <div>{{offerData.rightHeader.total.value}}</div>
+                    <div class="sub-value">{{offerData.rightHeader.total.subValue}}</div>
+                  </div>
+                </div>
+              </belka-test-card>
+              <!-- Dettagli -->
+              <div>
+                @for(item of offerData.rightHeader.details; track item.label; let i = $index) {
+                  @if(i != 0) {
+                    <div class="divider-container">
+                      <div class="divider"></div>
+                      <div>
+                        <div class="plus">
+                          <!-- Icona plus tra i dettagli -->
+                          <i-lucide [img]="plusIcon" size="20" color="var(--color-primary-mid, #146C83)" aria-hidden="true"></i-lucide>
+                        </div>
+                      </div>
+                      <div class="divider"></div>
+                    </div>
+                  }
+                  <div class="detail">
+                    <div class="label">{{item.label}}</div>
+                    <div>
+                      <div>{{item.value}}</div>
+                      @if(item.unit) {
+                        <div class="sub-value">{{item.unit}}</div>
+                      }
+                    </div>
+                  </div>
+                }
+              </div>
+            </div>
+            <!-- Pulsanti azione -->
+            <div class="overview-buttons">
+              @for(button of offerData.rightHeader.buttons; track button.id) {
+                <belka-test-button
+                  [attr.expand]="button.expand"
+                  [attr.size]="button.size"
+                  [attr.color]="button.color"
+                  [label]="button.label"
+                  [iconOptions]="button.iconOptions">
+                </belka-test-button>
+              }
+            </div>
+          </div>
+        </belka-test-card>
       </div>
     </div>
   </belka-test-card>

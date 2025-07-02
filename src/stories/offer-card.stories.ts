@@ -1,9 +1,27 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { OfferCardComponent, OfferData } from "./components/offer-card/offer-card.component";
-import { CircleCheck, ChevronRight, PhoneIncoming } from "lucide-angular";
+import { Meta, StoryObj, moduleMetadata } from '@storybook/angular';
+import { OfferCardComponent, OfferData } from '../app/components/offer-card/offer-card.component';
+import { CircleCheck, ChevronRight, PhoneIncoming } from 'lucide-angular';
 
-export const DEFAULT_OFFER_DATA: OfferData = {
+const meta: Meta<OfferCardComponent> = {
+  title: 'Components/OfferCard',
+  component: OfferCardComponent,
+  tags: ['autodocs'],
+  decorators: [
+    moduleMetadata({
+      imports: [],
+    }),
+  ],
+  argTypes: {
+    data: {
+      control: 'object',
+    }
+  },
+};
+
+export default meta;
+type Story = StoryObj<OfferCardComponent>;
+
+const data: OfferData = {
   benefits: [
     { id: 'a', label: 'Potrai usufruire GRATIS del servizio EDISONRisolve', icon: CircleCheck },
     { id: 'b', label: 'Energia 100% green', icon: CircleCheck },
@@ -82,14 +100,15 @@ export const DEFAULT_OFFER_DATA: OfferData = {
   }
 };
 
-@Component({
-  selector: 'app-root',
-  imports: [OfferCardComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
-  standalone: true,
-})
-export class AppComponent {
-  title = 'belka-test';
-  offer: OfferData = DEFAULT_OFFER_DATA;
-}
+export const Playground: Story = {
+  args: {
+    data
+  },
+  render: (args) => ({
+    component: OfferCardComponent,
+    props: args,
+    template: `
+      <belka-test-offer-card [data]="data"></belka-test-offer-card>
+    `,
+  }),
+};
