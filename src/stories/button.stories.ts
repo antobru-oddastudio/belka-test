@@ -1,5 +1,5 @@
 import { Meta, StoryObj, moduleMetadata } from '@storybook/angular';
-import { ButtonComponent } from '../app/components/button/button.component';
+import { ButtonComponent } from 'belka-test-components';
 import { ChevronRight } from 'lucide-angular';
 
 const meta: Meta<ButtonComponent> = {

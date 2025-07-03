@@ -1,5 +1,5 @@
 import { Meta, StoryObj, moduleMetadata } from '@storybook/angular';
-import { CardComponent } from '../app/components/card/card.component';
+import { CardComponent } from 'belka-test-components';
 
 const meta: Meta<CardComponent> = {
   title: 'Components/Card',

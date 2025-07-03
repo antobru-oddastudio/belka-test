@@ -1,5 +1,5 @@
 import { Meta, StoryObj, moduleMetadata } from '@storybook/angular';
-import { AlertComponent } from '../app/components/alert/alert.component';
+import { AlertComponent } from 'belka-test-components';
 
 const meta: Meta<AlertComponent> = {
   title: 'Components/Alert',

@@ -8,46 +8,8 @@
     "directives": [],
     "components": [
         {
-            "name": "AlertComponent",
-            "id": "component-AlertComponent-04be65af3dadbc85c6f4589d68124b5f7200473685745cfa90ff7693a7200e7aa68789a2916f131c4d95e6fc153925855fa0113384bf166e7067f811292349d7",
-            "file": "src/app/components/alert/alert.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "belka-test-alert",
-            "styleUrls": [],
-            "styles": [],
-            "templateUrl": [
-                "./alert.component.html"
-            ],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": false,
-            "imports": [],
-            "description": "<p>AlertComponent</p>\n<p>Componente per mostrare messaggi di avviso, successo, errore o informazione.\nSupporta la personalizzazione del colore tramite input e può essere usato per evidenziare informazioni importanti.</p>\n",
-            "rawdescription": "\n\nAlertComponent\n\nComponente per mostrare messaggi di avviso, successo, errore o informazione.\nSupporta la personalizzazione del colore tramite input e può essere usato per evidenziare informazioni importanti.\n",
-            "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n/**\r\n * AlertComponent\r\n *\r\n * Componente per mostrare messaggi di avviso, successo, errore o informazione.\r\n * Supporta la personalizzazione del colore tramite input e può essere usato per evidenziare informazioni importanti.\r\n */\r\n@Component({\r\n    selector: 'belka-test-alert',\r\n    imports: [],\r\n    templateUrl: './alert.component.html',\r\n    styleUrl: './alert.component.scss'\r\n})\r\nexport class AlertComponent {\r\n\r\n}\r\n",
-            "styleUrl": "./alert.component.scss",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "",
-            "extends": [],
-            "templateData": "<ng-content></ng-content>\r\n"
-        },
-        {
             "name": "AppComponent",
-            "id": "component-AppComponent-de1bbd833f789ab524c8a907627face5fc05d9aa5991283699196cb01d4ab388ef3c1273222ac840cc1e80d75ecd75604407b845e5c235d3ad726eb142341026",
+            "id": "component-AppComponent-ac7cef22cdab5cc29355504b64f578002270a8e90f7ef354f47efed159bf7733dce647c29ef355c099fc464e694344d72f1ca37a56b8b8d380485c753144bdfd",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -74,7 +36,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 94
+                    "line": 93
                 },
                 {
                     "name": "title",
@@ -85,7 +47,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 93
+                    "line": 92
                 }
             ],
             "methodsClass": [],
@@ -103,464 +65,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { RouterOutlet } from '@angular/router';\r\nimport { OfferCardComponent, OfferData } from \"./components/offer-card/offer-card.component\";\r\nimport { CircleCheck, ChevronRight, PhoneIncoming } from \"lucide-angular\";\r\n\r\nexport const DEFAULT_OFFER_DATA: OfferData = {\r\n  benefits: [\r\n    { id: 'a', label: 'Potrai usufruire GRATIS del servizio EDISONRisolve', icon: CircleCheck },\r\n    { id: 'b', label: 'Energia 100% green', icon: CircleCheck },\r\n    { id: 'c', label: 'Programma fedeltà \"Spendi&Riprendi\" con bonus', icon: CircleCheck },\r\n  ],\r\n  infoList: [\r\n    {\r\n      label: 'Tipo tariffa',\r\n      value: 'Monoraria'\r\n    },\r\n    {\r\n      label: 'Prezzo Luce',\r\n      value: 'PUN + 0,169 €/kWh'\r\n    },\r\n    {\r\n      label: 'Prezzo Gas',\r\n      value: 'PSV + 0,593 €/Smc'\r\n    },\r\n    {\r\n      label: 'Quota fissa (inclusa)',\r\n      value: 'Luce 6,60€/mese, Gas 6,60€/mese'\r\n    },\r\n    {\r\n      label: 'Prezzo Gas',\r\n      value: 'Variabile'\r\n    }\r\n  ],\r\n  logo: 'assets/teletu.png',\r\n  title: 'Edison Dynamic Luce e Gas',\r\n  rightHeader: {\r\n    header: {\r\n      title: 'Dual, Luce + Gas',\r\n      icon: 'assets/icons/luce-gas.svg'\r\n    },\r\n    total: {\r\n      label: 'Totale',\r\n      subValue: '670,00 l\\'anno',\r\n      value: '52,27 €'\r\n    },\r\n    buttons: [\r\n      {\r\n        label: 'Scopri l\\'offerta',\r\n        id: 'show-offer',\r\n        expand: 'full',\r\n        color: 'primary',\r\n        size: 'xl',\r\n        iconOptions: {\r\n          size: '20',\r\n          icon: ChevronRight\r\n        }\r\n      },\r\n      {\r\n        label: 'Ti chiamiamo gratis',\r\n        id: 'free-call',\r\n        expand: 'full',\r\n        color: 'secondary',\r\n        size: 'xl',\r\n        iconOptions: {\r\n          size: '20',\r\n          icon: PhoneIncoming\r\n        }\r\n      }\r\n    ],\r\n    details: [\r\n      {\r\n        label: 'Luce',\r\n        value: '25,27 €',\r\n        unit: 'al mese'\r\n      },\r\n      {\r\n        label: 'Gas',\r\n        value: '32,14 €',\r\n        unit: 'al mese'\r\n      }\r\n    ],\r\n  }\r\n};\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  imports: [OfferCardComponent],\r\n  templateUrl: './app.component.html',\r\n  styleUrl: './app.component.scss',\r\n  standalone: true,\r\n})\r\nexport class AppComponent {\r\n  title = 'belka-test';\r\n  offer: OfferData = DEFAULT_OFFER_DATA;\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { OfferCardComponent, OfferData } from \"belka-test-components\";\r\nimport { CircleCheck, ChevronRight, PhoneIncoming } from \"lucide-angular\";\r\n\r\nexport const DEFAULT_OFFER_DATA: OfferData = {\r\n  benefits: [\r\n    { id: 'a', label: 'Potrai usufruire GRATIS del servizio EDISONRisolve', icon: CircleCheck },\r\n    { id: 'b', label: 'Energia 100% green', icon: CircleCheck },\r\n    { id: 'c', label: 'Programma fedeltà \"Spendi&Riprendi\" con bonus', icon: CircleCheck },\r\n  ],\r\n  infoList: [\r\n    {\r\n      label: 'Tipo tariffa',\r\n      value: 'Monoraria'\r\n    },\r\n    {\r\n      label: 'Prezzo Luce',\r\n      value: 'PUN + 0,169 €/kWh'\r\n    },\r\n    {\r\n      label: 'Prezzo Gas',\r\n      value: 'PSV + 0,593 €/Smc'\r\n    },\r\n    {\r\n      label: 'Quota fissa (inclusa)',\r\n      value: 'Luce 6,60€/mese, Gas 6,60€/mese'\r\n    },\r\n    {\r\n      label: 'Prezzo Gas',\r\n      value: 'Variabile'\r\n    }\r\n  ],\r\n  logo: 'assets/teletu.png',\r\n  title: 'Edison Dynamic Luce e Gas',\r\n  rightHeader: {\r\n    header: {\r\n      title: 'Dual, Luce + Gas',\r\n      icon: 'assets/icons/luce-gas.svg'\r\n    },\r\n    total: {\r\n      label: 'Totale',\r\n      subValue: '670,00 l\\'anno',\r\n      value: '52,27 €'\r\n    },\r\n    buttons: [\r\n      {\r\n        label: 'Scopri l\\'offerta',\r\n        id: 'show-offer',\r\n        expand: 'full',\r\n        color: 'primary',\r\n        size: 'xl',\r\n        iconOptions: {\r\n          size: '20',\r\n          icon: ChevronRight\r\n        }\r\n      },\r\n      {\r\n        label: 'Ti chiamiamo gratis',\r\n        id: 'free-call',\r\n        expand: 'full',\r\n        color: 'secondary',\r\n        size: 'xl',\r\n        iconOptions: {\r\n          size: '20',\r\n          icon: PhoneIncoming\r\n        }\r\n      }\r\n    ],\r\n    details: [\r\n      {\r\n        label: 'Luce',\r\n        value: '25,27 €',\r\n        unit: 'al mese'\r\n      },\r\n      {\r\n        label: 'Gas',\r\n        value: '32,14 €',\r\n        unit: 'al mese'\r\n      }\r\n    ],\r\n  }\r\n};\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  imports: [OfferCardComponent],\r\n  templateUrl: './app.component.html',\r\n  styleUrl: './app.component.scss',\r\n  standalone: true,\r\n})\r\nexport class AppComponent {\r\n  title = 'belka-test';\r\n  offer: OfferData = DEFAULT_OFFER_DATA;\r\n}\r\n",
             "styleUrl": "./app.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
             "templateData": "<div style=\"max-width: 803px; margin: 0 auto;\">\r\n  <belka-test-offer-card [data]=\"offer\"></belka-test-offer-card>\r\n</div>\r\n"
-        },
-        {
-            "name": "BadgeComponent",
-            "id": "component-BadgeComponent-6e745e3ab3d0e1586b5e89d97912689c771b4fb5079851d7a845c2ed41ce04acb4198c2ffccc165e6b35d42739f1163c04dd91055e1fc7c0744b0d7b15bf3671",
-            "file": "src/app/components/badge/badge.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "belka-test-badge",
-            "styleUrls": [],
-            "styles": [],
-            "templateUrl": [
-                "./badge.component.html"
-            ],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [
-                {
-                    "name": "label",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "<p>Testo visualizzato all&#39;interno del badge</p>\n",
-                    "line": 18,
-                    "rawdescription": "\n\nTesto visualizzato all'interno del badge\n",
-                    "modifierKind": [
-                        125
-                    ],
-                    "required": false
-                }
-            ],
-            "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "color",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "\"primary\" | \"secondary\"",
-                    "indexKey": "",
-                    "optional": true,
-                    "description": "<p>Colore del badge: &#39;primary&#39; o &#39;secondary&#39;</p>\n",
-                    "line": 22,
-                    "rawdescription": "\n\nColore del badge: 'primary' o 'secondary'\n",
-                    "modifierKind": [
-                        125
-                    ]
-                },
-                {
-                    "name": "label",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "<p>Testo visualizzato all&#39;interno del badge</p>\n",
-                    "line": 18,
-                    "rawdescription": "\n\nTesto visualizzato all'interno del badge\n",
-                    "modifierKind": [
-                        125
-                    ],
-                    "required": false
-                }
-            ],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": false,
-            "imports": [],
-            "description": "<p>BadgeComponent</p>\n<p>Un badge visuale per etichette o status, con supporto per colore e testo personalizzato.</p>\n",
-            "rawdescription": "\n\nBadgeComponent\n\nUn badge visuale per etichette o status, con supporto per colore e testo personalizzato.\n",
-            "type": "component",
-            "sourceCode": "import { Component, input } from '@angular/core';\r\n\r\n/**\r\n * BadgeComponent\r\n *\r\n * Un badge visuale per etichette o status, con supporto per colore e testo personalizzato.\r\n */\r\n@Component({\r\n  selector: 'belka-test-badge',\r\n  imports: [],\r\n  templateUrl: './badge.component.html',\r\n  styleUrl: './badge.component.scss'\r\n})\r\nexport class BadgeComponent {\r\n  /**\r\n   * Testo visualizzato all'interno del badge\r\n   */\r\n  public label = input<string>();\r\n  /**\r\n   * Colore del badge: 'primary' o 'secondary'\r\n   */\r\n  public color?: 'primary' | 'secondary';\r\n}\r\n",
-            "styleUrl": "./badge.component.scss",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "",
-            "extends": [],
-            "templateData": "{{label()}}\r\n"
-        },
-        {
-            "name": "ButtonComponent",
-            "id": "component-ButtonComponent-8aafbad37600110d764168fcda8eddecfe4efb3c31a2ce332fcc76516ef113f4166362490071fb0d2f34b66fb1fce2fd433900a64e23418343fd290fc31815f6",
-            "file": "src/app/components/button/button.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "belka-test-button",
-            "styleUrls": [],
-            "styles": [],
-            "templateUrl": [
-                "./button.component.html"
-            ],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [
-                {
-                    "name": "id",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "<p>Identificatore univoco del bottone</p>\n",
-                    "line": 19,
-                    "rawdescription": "\n\nIdentificatore univoco del bottone\n",
-                    "modifierKind": [
-                        125
-                    ],
-                    "required": false
-                },
-                {
-                    "name": "label",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "<p>Testo/etichetta del bottone</p>\n",
-                    "line": 23,
-                    "rawdescription": "\n\nTesto/etichetta del bottone\n",
-                    "modifierKind": [
-                        125
-                    ],
-                    "required": false
-                }
-            ],
-            "outputsClass": [
-                {
-                    "name": "click",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "<p>Evento emesso al click sul bottone</p>\n",
-                    "line": 43,
-                    "rawdescription": "\n\nEvento emesso al click sul bottone\n",
-                    "modifierKind": [
-                        125
-                    ],
-                    "required": false
-                }
-            ],
-            "propertiesClass": [
-                {
-                    "name": "click",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "<p>Evento emesso al click sul bottone</p>\n",
-                    "line": 43,
-                    "rawdescription": "\n\nEvento emesso al click sul bottone\n",
-                    "modifierKind": [
-                        125
-                    ],
-                    "required": false
-                },
-                {
-                    "name": "color",
-                    "defaultValue": "input<'primary' | 'secondary'>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "<p>Colore del bottone: &#39;primary&#39; o &#39;secondary&#39;</p>\n",
-                    "line": 35,
-                    "rawdescription": "\n\nColore del bottone: 'primary' o 'secondary'\n",
-                    "modifierKind": [
-                        125
-                    ]
-                },
-                {
-                    "name": "expand",
-                    "defaultValue": "input<\"full\" | 'auto' | undefined>('auto')",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "<p>Espansione del bottone: &#39;full&#39; per larghezza completa, &#39;auto&#39; per larghezza automatica</p>\n",
-                    "line": 27,
-                    "rawdescription": "\n\nEspansione del bottone: 'full' per larghezza completa, 'auto' per larghezza automatica\n",
-                    "modifierKind": [
-                        125
-                    ]
-                },
-                {
-                    "name": "iconOptions",
-                    "defaultValue": "input<{ icon: LucideIconData, size?: string, color?: string }>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "<p>Opzioni per l&#39;icona del bottone</p>\n",
-                    "line": 39,
-                    "rawdescription": "\n\nOpzioni per l'icona del bottone\n",
-                    "modifierKind": [
-                        125
-                    ]
-                },
-                {
-                    "name": "id",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "<p>Identificatore univoco del bottone</p>\n",
-                    "line": 19,
-                    "rawdescription": "\n\nIdentificatore univoco del bottone\n",
-                    "modifierKind": [
-                        125
-                    ],
-                    "required": false
-                },
-                {
-                    "name": "label",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "<p>Testo/etichetta del bottone</p>\n",
-                    "line": 23,
-                    "rawdescription": "\n\nTesto/etichetta del bottone\n",
-                    "modifierKind": [
-                        125
-                    ],
-                    "required": false
-                },
-                {
-                    "name": "size",
-                    "defaultValue": "input<'xl' | 'base' | undefined>('xl')",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "<p>Dimensione del bottone: &#39;xl&#39; o &#39;base&#39;</p>\n",
-                    "line": 31,
-                    "rawdescription": "\n\nDimensione del bottone: 'xl' o 'base'\n",
-                    "modifierKind": [
-                        125
-                    ]
-                }
-            ],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": false,
-            "imports": [
-                {
-                    "name": "LucideAngularModule",
-                    "type": "module"
-                }
-            ],
-            "description": "<p>ButtonComponent</p>\n<p>Un pulsante personalizzabile con supporto per colore, dimensione, espansione, icona e gestione eventi click.</p>\n",
-            "rawdescription": "\n\nButtonComponent\n\nUn pulsante personalizzabile con supporto per colore, dimensione, espansione, icona e gestione eventi click.\n",
-            "type": "component",
-            "sourceCode": "import { Component, input, output } from '@angular/core';\r\nimport { LucideAngularModule, LucideIconData } from 'lucide-angular';\r\n\r\n/**\r\n * ButtonComponent\r\n *\r\n * Un pulsante personalizzabile con supporto per colore, dimensione, espansione, icona e gestione eventi click.\r\n */\r\n@Component({\r\n  selector: 'belka-test-button',\r\n  imports: [LucideAngularModule],\r\n  templateUrl: './button.component.html',\r\n  styleUrl: './button.component.scss'\r\n})\r\nexport class ButtonComponent {\r\n  /**\r\n   * Identificatore univoco del bottone\r\n   */\r\n  public id = input<string>();\r\n  /**\r\n   * Testo/etichetta del bottone\r\n   */\r\n  public label = input<string>();\r\n  /**\r\n   * Espansione del bottone: 'full' per larghezza completa, 'auto' per larghezza automatica\r\n   */\r\n  public expand = input<\"full\" | 'auto' | undefined>('auto');\r\n  /**\r\n   * Dimensione del bottone: 'xl' o 'base'\r\n   */\r\n  public size = input<'xl' | 'base' | undefined>('xl');\r\n  /**\r\n   * Colore del bottone: 'primary' o 'secondary'\r\n   */\r\n  public color = input<'primary' | 'secondary'>();\r\n  /**\r\n   * Opzioni per l'icona del bottone\r\n   */\r\n  public iconOptions = input<{ icon: LucideIconData, size?: string, color?: string }>();\r\n  /**\r\n   * Evento emesso al click sul bottone\r\n   */\r\n  public click = output<MouseEvent>();\r\n}\r\n",
-            "styleUrl": "./button.component.scss",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "",
-            "extends": [],
-            "templateData": "@let iconOpts = iconOptions();\r\n<button [attr.expand]=\"expand()\" [attr.size]=\"size()\" [attr.color]=\"color()\" (click)=\"click.emit($event)\">\r\n  <div class=\"label\">\r\n    <div>{{label()}}</div>\r\n    @if(iconOpts) {\r\n      <i-lucide [img]=\"iconOpts.icon\" [size]=\"iconOpts.size\" [color]=\"iconOpts.color\"></i-lucide>\r\n    }\r\n  </div>\r\n</button>\r\n"
-        },
-        {
-            "name": "CardComponent",
-            "id": "component-CardComponent-ba90717f05028ce6fbc29588c77099f7ea9165825d9bdd82658aed57eed606f1648bcc9f27c4a3e3bae9941d958a92d8c5ee13802fe40e94467f03a362337314",
-            "file": "src/app/components/card/card.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "belka-test-card",
-            "styleUrls": [],
-            "styles": [],
-            "templateUrl": [
-                "./card.component.html"
-            ],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": false,
-            "imports": [],
-            "description": "<p>CardComponent</p>\n<p>Componente contenitore per visualizzare contenuti all&#39;interno di una card stilizzata.\nPuò essere usato per raggruppare informazioni, sezioni o altri componenti con uno stile coerente.</p>\n",
-            "rawdescription": "\n\nCardComponent\n\nComponente contenitore per visualizzare contenuti all'interno di una card stilizzata.\nPuò essere usato per raggruppare informazioni, sezioni o altri componenti con uno stile coerente.\n",
-            "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n/**\r\n * CardComponent\r\n *\r\n * Componente contenitore per visualizzare contenuti all'interno di una card stilizzata.\r\n * Può essere usato per raggruppare informazioni, sezioni o altri componenti con uno stile coerente.\r\n */\r\n@Component({\r\n    selector: 'belka-test-card',\r\n    imports: [],\r\n    templateUrl: './card.component.html',\r\n    styleUrl: './card.component.scss'\r\n})\r\nexport class CardComponent {\r\n\r\n}\r\n",
-            "styleUrl": "./card.component.scss",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "",
-            "extends": [],
-            "templateData": "<ng-content select=\"[header]\"></ng-content>\r\n<div class=\"content\">\r\n  <ng-content select=\"[body]\"></ng-content>\r\n</div>\r\n<ng-content select=\"[footer]\"></ng-content>\r\n"
-        },
-        {
-            "name": "OfferCardComponent",
-            "id": "component-OfferCardComponent-90da3287e6eaf2e3922572451bd286b52bf75d38a1b533498b51abecdd5e87249e9a5ea9877fed848e7b13887e5844cdfd5c209eb02f4392721d1d64b82c3156",
-            "file": "src/app/components/offer-card/offer-card.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "belka-test-offer-card",
-            "styleUrls": [],
-            "styles": [],
-            "templateUrl": [
-                "./offer-card.component.html"
-            ],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [
-                {
-                    "name": "data",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "<p>Dati dell&#39;offerta da visualizzare nella card</p>\n",
-                    "line": 66,
-                    "rawdescription": "\nDati dell'offerta da visualizzare nella card",
-                    "modifierKind": [
-                        125
-                    ],
-                    "required": false
-                }
-            ],
-            "outputsClass": [
-                {
-                    "name": "buttonClick",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "<p>Evento emesso al click su un pulsante della card\nRestituisce l&#39;id del bottone.</p>\n",
-                    "line": 72,
-                    "rawdescription": "\n\nEvento emesso al click su un pulsante della card\nRestituisce l'id del bottone.\n",
-                    "modifierKind": [
-                        125
-                    ],
-                    "required": false
-                }
-            ],
-            "propertiesClass": [
-                {
-                    "name": "buttonClick",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "<p>Evento emesso al click su un pulsante della card\nRestituisce l&#39;id del bottone.</p>\n",
-                    "line": 72,
-                    "rawdescription": "\n\nEvento emesso al click su un pulsante della card\nRestituisce l'id del bottone.\n",
-                    "modifierKind": [
-                        125
-                    ],
-                    "required": false
-                },
-                {
-                    "name": "data",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "<p>Dati dell&#39;offerta da visualizzare nella card</p>\n",
-                    "line": 66,
-                    "rawdescription": "\nDati dell'offerta da visualizzare nella card",
-                    "modifierKind": [
-                        125
-                    ],
-                    "required": false
-                },
-                {
-                    "name": "plusIcon",
-                    "defaultValue": "Plus",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "LucideIconData",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "<p>Icona plus</p>\n",
-                    "line": 63,
-                    "rawdescription": "\nIcona plus",
-                    "modifierKind": [
-                        125
-                    ]
-                }
-            ],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": true,
-            "imports": [
-                {
-                    "name": "CardComponent",
-                    "type": "component"
-                },
-                {
-                    "name": "AlertComponent",
-                    "type": "component"
-                },
-                {
-                    "name": "ButtonComponent",
-                    "type": "component"
-                },
-                {
-                    "name": "LucideAngularModule",
-                    "type": "module"
-                }
-            ],
-            "description": "<p>OfferCardComponent</p>\n<p>Card riassuntiva di un&#39;offerta, con logo, titolo, benefit, dettagli, totale e pulsanti azione.</p>\n",
-            "rawdescription": "\n\nOfferCardComponent\n\nCard riassuntiva di un'offerta, con logo, titolo, benefit, dettagli, totale e pulsanti azione.\n",
-            "type": "component",
-            "sourceCode": "import { Component, input, output } from '@angular/core';\r\nimport { CardComponent } from '../card/card.component';\r\nimport { AlertComponent } from '../alert/alert.component';\r\nimport { ButtonComponent } from '../button/button.component';\r\nimport { LucideAngularModule, LucideIconData, Plus } from 'lucide-angular';\r\n/**\r\n * Tipo che rappresenta i dati visualizzati dalla OfferCard.\r\n */\r\nexport type OfferData = {\r\n  /** URL del logo da mostrare nella card */\r\n  logo: string;\r\n  /** Titolo principale della card */\r\n  title: string;\r\n  /** Lista dei benefit, ognuno con id, icona opzionale e label */\r\n  benefits: { id: string, icon?: LucideIconData, label: string }[];\r\n  /** Lista di informazioni aggiuntive (label e valore) */\r\n  infoList: { label: string, value: string }[];\r\n  rightHeader: {\r\n    header?: {\r\n      title: string;\r\n      icon?: LucideIconData | string;\r\n    }\r\n    /** Totale, con label, valore e subvalore */\r\n    total: { label: string, value: string, subValue: string };\r\n    /** Dettagli aggiuntivi (label, valore, unità opzionale) */\r\n    details: { label: string, value: string, unit?: string }[];\r\n    /** Pulsanti da mostrare nella card */\r\n    buttons: {\r\n      /** Identificatore del pulsante */\r\n      id: string,\r\n      /** Testo del pulsante */\r\n      label: string,\r\n      /** Espansione del pulsante */\r\n      expand?: \"full\" | 'auto',\r\n      /** Dimensione del pulsante */\r\n      size?: 'xl' | 'base',\r\n      /** Colore del pulsante */\r\n      color?: 'primary' | 'secondary',\r\n      /** Opzioni per l'icona del pulsante */\r\n      iconOptions?: {\r\n        icon: LucideIconData,\r\n        size?: string,\r\n        color?: string\r\n      }\r\n    }[]\r\n  }\r\n}\r\n\r\n/**\r\n * OfferCardComponent\r\n *\r\n * Card riassuntiva di un'offerta, con logo, titolo, benefit, dettagli, totale e pulsanti azione.\r\n */\r\n@Component({\r\n  selector: 'belka-test-offer-card',\r\n  imports: [CardComponent, AlertComponent, ButtonComponent, LucideAngularModule],\r\n  templateUrl: './offer-card.component.html',\r\n  styleUrl: './offer-card.component.scss',\r\n  standalone: true\r\n})\r\nexport class OfferCardComponent {\r\n  /** Icona plus */\r\n  public plusIcon: LucideIconData = Plus;\r\n\r\n  /** Dati dell'offerta da visualizzare nella card */\r\n  public data = input<OfferData>();\r\n\r\n  /**\r\n   * Evento emesso al click su un pulsante della card\r\n   * Restituisce l'id del bottone.\r\n   * */\r\n  public buttonClick = output<string>();\r\n}\r\n",
-            "styleUrl": "./offer-card.component.scss",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "",
-            "extends": [],
-            "templateData": "@let offerData = data();\r\n@if(offerData) {\r\n  <!-- Card principale dell'offerta -->\r\n  <belka-test-card class=\"offer-card\">\r\n    <div body class=\"offer-card-body\">\r\n      <div class=\"left-side\">\r\n        <!-- Header con logo e titolo -->\r\n        <div class=\"belka-test-card-header-wrapper\">\r\n          <div class=\"belka-test-card-header\">\r\n            <div>\r\n              <img [src]=\"offerData.logo\" alt=\"Logo offerta\" />\r\n            </div>\r\n            <div class=\"title\">{{offerData.title}}</div>\r\n          </div>\r\n          @let header = offerData.rightHeader.header;\r\n          @if(header && header.icon) {\r\n            <div class=\"mobile-header-icon\">\r\n              @if(typeof header.icon === 'string') {\r\n                <img src=\"assets/icons/luce-gas.svg\" alt=\"Icona Luce e Gas\" />\r\n              } @else {\r\n                <i-lucide [img]=\"header.icon\" size=\"20\" color=\"var(--color-primary-mid, #146C83)\" aria-hidden=\"true\"></i-lucide>\r\n              }\r\n            </div>\r\n          }\r\n        </div>\r\n        <div class=\"divider\"></div>\r\n        <!-- Lista benefit -->\r\n        <belka-test-alert color=\"success\">\r\n          @for(item of offerData.benefits; track item.id ) {\r\n            <div class=\"benefits-item\">\r\n              @if(item.icon) {\r\n                <!-- Icona benefit -->\r\n                <i-lucide [img]=\"item.icon\" size=\"16\" aria-hidden=\"true\"></i-lucide>\r\n              }\r\n              <div>{{item.label}}</div>\r\n            </div>\r\n          }\r\n        </belka-test-alert>\r\n        <!-- Info aggiuntive -->\r\n        <div class=\"info-grid grid grid-cols-2\">\r\n          @for(item of offerData.infoList; track item.label) {\r\n            <div class=\"bold\">{{item.label}}</div>\r\n            <div>{{item.value}}</div>\r\n          }\r\n        </div>\r\n      </div>\r\n      <div class=\"right-side\">\r\n        <!-- Card riepilogo -->\r\n        <belka-test-card class=\"overview-card\">\r\n          @if(offerData.rightHeader.header) {\r\n            <div header>\r\n              <div>{{offerData.rightHeader.header.title}}</div>\r\n              @if(offerData.rightHeader.header.icon) {\r\n                @let icon = offerData.rightHeader.header.icon;\r\n                <div>\r\n                  @if(typeof icon === 'string') {\r\n                    <img src=\"assets/icons/luce-gas.svg\" alt=\"Icona Luce e Gas\" />\r\n                  } @else {\r\n                    <i-lucide [img]=\"icon\" size=\"20\" color=\"var(--color-primary-mid, #146C83)\" aria-hidden=\"true\"></i-lucide>\r\n                  }\r\n                </div>\r\n              }\r\n            </div>\r\n          }\r\n          <div body>\r\n            <div class=\"info-container\">\r\n              <!-- Totale -->\r\n              <belka-test-card class=\"overview-total\">\r\n                <div body>\r\n                  <div class=\"label\">{{offerData.rightHeader.total.label}}</div>\r\n                  <div>\r\n                    <div>{{offerData.rightHeader.total.value}}</div>\r\n                    <div class=\"sub-value\">{{offerData.rightHeader.total.subValue}}</div>\r\n                  </div>\r\n                </div>\r\n              </belka-test-card>\r\n              <!-- Dettagli -->\r\n              <div>\r\n                @for(item of offerData.rightHeader.details; track item.label; let i = $index) {\r\n                  @if(i != 0) {\r\n                    <div class=\"divider-container\">\r\n                      <div class=\"divider\"></div>\r\n                      <div>\r\n                        <div class=\"plus\">\r\n                          <!-- Icona plus tra i dettagli -->\r\n                          <i-lucide [img]=\"plusIcon\" size=\"20\" color=\"var(--color-primary-mid, #146C83)\" aria-hidden=\"true\"></i-lucide>\r\n                        </div>\r\n                      </div>\r\n                      <div class=\"divider\"></div>\r\n                    </div>\r\n                  }\r\n                  <div class=\"detail\">\r\n                    <div class=\"label\">{{item.label}}</div>\r\n                    <div>\r\n                      <div>{{item.value}}</div>\r\n                      @if(item.unit) {\r\n                        <div class=\"sub-value\">{{item.unit}}</div>\r\n                      }\r\n                    </div>\r\n                  </div>\r\n                }\r\n              </div>\r\n            </div>\r\n            <!-- Pulsanti azione -->\r\n            <div class=\"overview-buttons\">\r\n              @for(button of offerData.rightHeader.buttons; track button.id) {\r\n                <belka-test-button\r\n                  [attr.expand]=\"button.expand\"\r\n                  [attr.size]=\"button.size\"\r\n                  [attr.color]=\"button.color\"\r\n                  [label]=\"button.label\"\r\n                  [iconOptions]=\"button.iconOptions\">\r\n                </belka-test-button>\r\n              }\r\n            </div>\r\n          </div>\r\n        </belka-test-card>\r\n      </div>\r\n    </div>\r\n  </belka-test-card>\r\n}\r\n"
         }
     ],
     "modules": [],
@@ -588,19 +99,7 @@
             }
         ],
         "functions": [],
-        "typealiases": [
-            {
-                "name": "OfferData",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "literal type",
-                "file": "src/app/components/offer-card/offer-card.component.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "<p>Tipo che rappresenta i dati visualizzati dalla OfferCard.</p>\n",
-                "kind": 187
-            }
-        ],
+        "typealiases": [],
         "enumerations": [],
         "groupedVariables": {
             "src/app/app.config.ts": [
@@ -630,26 +129,12 @@
         },
         "groupedFunctions": {},
         "groupedEnumerations": {},
-        "groupedTypeAliases": {
-            "src/app/components/offer-card/offer-card.component.ts": [
-                {
-                    "name": "OfferData",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "literal type",
-                    "file": "src/app/components/offer-card/offer-card.component.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "<p>Tipo che rappresenta i dati visualizzati dalla OfferCard.</p>\n",
-                    "kind": 187
-                }
-            ]
-        }
+        "groupedTypeAliases": {}
     },
     "routes": [],
     "coverage": {
-        "count": 66,
-        "status": "good",
+        "count": 0,
+        "status": "low",
         "files": [
             {
                 "filePath": "src/app/app.component.ts",
@@ -679,61 +164,6 @@
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
-            },
-            {
-                "filePath": "src/app/components/alert/alert.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "AlertComponent",
-                "coveragePercent": 100,
-                "coverageCount": "1/1",
-                "status": "very-good"
-            },
-            {
-                "filePath": "src/app/components/badge/badge.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "BadgeComponent",
-                "coveragePercent": 100,
-                "coverageCount": "4/4",
-                "status": "very-good"
-            },
-            {
-                "filePath": "src/app/components/button/button.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "ButtonComponent",
-                "coveragePercent": 100,
-                "coverageCount": "11/11",
-                "status": "very-good"
-            },
-            {
-                "filePath": "src/app/components/card/card.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "CardComponent",
-                "coveragePercent": 100,
-                "coverageCount": "1/1",
-                "status": "very-good"
-            },
-            {
-                "filePath": "src/app/components/offer-card/offer-card.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "OfferCardComponent",
-                "coveragePercent": 100,
-                "coverageCount": "6/6",
-                "status": "very-good"
-            },
-            {
-                "filePath": "src/app/components/offer-card/offer-card.component.ts",
-                "type": "type alias",
-                "linktype": "miscellaneous",
-                "linksubtype": "typealias",
-                "name": "OfferData",
-                "coveragePercent": 100,
-                "coverageCount": "1/1",
-                "status": "very-good"
             }
         ]
     }

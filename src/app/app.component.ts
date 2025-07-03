@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { OfferCardComponent, OfferData } from "./components/offer-card/offer-card.component";
+import { OfferCardComponent, OfferData } from "belka-test-components";
 import { CircleCheck, ChevronRight, PhoneIncoming } from "lucide-angular";
 
 export const DEFAULT_OFFER_DATA: OfferData = {

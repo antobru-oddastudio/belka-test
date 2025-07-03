@@ -1,5 +1,5 @@
 import { Meta, StoryObj, moduleMetadata } from '@storybook/angular';
-import { BadgeComponent } from '../app/components/badge/badge.component';
+import { BadgeComponent } from 'belka-test-components';
 
 const meta: Meta<BadgeComponent> = {
   title: 'Components/Badge',
