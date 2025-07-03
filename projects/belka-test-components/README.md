@@ -1,63 +1,47 @@
-# BelkaTestComponents
+# belka-test-components
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.0.
+Libreria di componenti Angular riutilizzabili per progetti frontend.
 
-## Code scaffolding
+## Componenti inclusi
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- **AlertComponent**: Mostra messaggi di avviso, successo, errore o informazione.
+- **BadgeComponent**: Badge visuale per etichette o status, con colore e testo personalizzato.
+- **ButtonComponent**: Pulsante personalizzabile con supporto per colore, dimensione, espansione, icona e gestione eventi click.
+- **CardComponent**: Contenitore per visualizzare contenuti all'interno di una card stilizzata.
+- **OfferCardComponent**: Card riassuntiva di un'offerta, con logo, titolo, benefit, dettagli, totale e pulsanti azione.
 
-```bash
-ng generate component component-name
-```
+## Installazione e build
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the library, run:
+Per compilare la libreria:
 
 ```bash
 ng build belka-test-components
 ```
 
-This command will compile your project, and the build artifacts will be placed in the `dist/` directory.
+Gli artefatti saranno disponibili in `dist/belka-test-components`.
 
-### Publishing the Library
+### Pubblicazione
 
-Once the project is built, you can publish your library by following these steps:
-
-1. Navigate to the `dist` directory:
-   ```bash
-   cd dist/belka-test-components
-   ```
-
-2. Run the `npm publish` command to publish your library to the npm registry:
-   ```bash
-   npm publish
-   ```
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Per pubblicare la libreria su npm:
 
 ```bash
-ng test
+cd dist/belka-test-components
+npm publish
 ```
 
-## Running end-to-end tests
+## Test
 
-For end-to-end (e2e) testing, run:
+Per eseguire i test unitari:
 
 ```bash
-ng e2e
+ng test belka-test-components
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Dipendenze principali
 
-## Additional Resources
+- Angular ^19.2.0
+- tslib ^2.3.0
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Utilizzo
+
+Importa i componenti desiderati nel tuo modulo Angular e usali nei template tramite i rispettivi selector (es: `<belka-test-alert>`, `<belka-test-badge>`, ecc).
